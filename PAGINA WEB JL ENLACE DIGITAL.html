@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ENLACE DIGITAL - Marketing Digital y Redes Sociales. Creamos comunidad y materializamos sueños conectando al mundo digital.">
+    <title>ENLACE DIGITAL | Marketing Digital &amp; Redes Sociales</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(10,10,20,0.92), rgba(10,10,20,0.95)), 
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') center/cover no-repeat;
+        }
+        .gold { color: #d4af37; }
+        .logo-glow { filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6)); }
+    </style>
+</head>
+<body class="bg-[#0a0a14] text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full bg-[#0a0a14]/90 backdrop-blur-md z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="ENLACE DIGITAL" class="h-12 w-auto">
+                <div class="headline text-2xl font-bold tracking-tighter">ENLACE DIGITAL</div>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#servicios" class="hover:text-[#d4af37] transition">Servicios</a>
+                <a href="#nosotras" class="hover:text-[#d4af37] transition">Nosotras</a>
+                <a href="#comunidad" class="hover:text-[#d4af37] transition">Comunidad</a>
+                <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-[#d4af37] transition">Legal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <img src="logo.png" alt="ENLACE DIGITAL Logo" class="mx-auto h-56 md:h-64 mb-10 logo-glow">
+            
+            <h1 class="headline text-6xl md:text-7xl font-bold leading-tight mb-6">
+                Conectamos tus sueños<br>con el <span class="gold">mundo digital</span>
+            </h1>
+            
+            <p class="text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+                Marketing Digital y Redes Sociales liderado por dos mujeres.<br>
+                Creamos comunidad real para que todos los sueños se materialicen.
+            </p>
+            
+            <!-- Botones WhatsApp -->
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="https://wa.me/573504271008?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20conectar%20mi%20sue%C3%B1o%20al%20mundo%20digital" 
+                   target="_blank"
+                   class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xl px-10 py-6 rounded-3xl flex items-center gap-4 transition-all hover:scale-105">
+                    <span class="material-symbols-outlined text-3xl">chat</span>
+                    WhatsApp Colombia<br><span class="text-base opacity-90">+57 350 4271008</span>
+                </a>
+                
+                <a href="https://wa.me/34643082182?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20conectar%20mi%20sue%C3%B1o%20al%20mundo%20digital" 
+                   target="_blank"
+                   class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xl px-10 py-6 rounded-3xl flex items-center gap-4 transition-all hover:scale-105">
+                    <span class="material-symbols-outlined text-3xl">chat</span>
+                    WhatsApp España<br><span class="text-base opacity-90">+34 643 082 182</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="headline text-5xl font-bold">Nuestros Servicios</h2>
+            <p class="text-gray-400 mt-3">Estrategias digitales que conectan y hacen crecer tu marca</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#d4af37] transition">
+                <h3 class="text-2xl font-semibold mb-4">Gestión de Redes Sociales</h3>
+                <p class="text-gray-400">Contenido estratégico, calendario editorial y manejo profesional de Instagram, TikTok, LinkedIn y Facebook.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#d4af37] transition">
+                <h3 class="text-2xl font-semibold mb-4">Marketing Digital</h3>
+                <p class="text-gray-400">Campañas de anuncios, SEO, email marketing y estrategias que generan resultados reales.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#d4af37] transition">
+                <h3 class="text-2xl font-semibold mb-4">Creación de Comunidad</h3>
+                <p class="text-gray-400">Construimos conexiones auténticas para que tus sueños se materialicen en el mundo digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTRAS -->
+    <section id="nosotras" class="py-24 bg-[#0f0f1f]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="headline text-5xl font-bold mb-6">Dos mujeres creando enlaces que transforman</h2>
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Somos un equipo femenino apasionado por el marketing digital. Creemos que cualquier sueño puede materializarse cuando se conecta correctamente con el mundo digital.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-[#d4af37]/10 to-transparent border border-[#d4af37]/20 p-10 rounded-3xl">
+                    <p class="italic text-2xl">
+                        “No solo gestionamos redes. Creamos comunidad, confianza y oportunidades reales para que tus sueños se hagan realidad.”
+                    </p>
+                    <p class="mt-6 text-sm text-gray-400">— Fundadoras de ENLACE DIGITAL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMUNIDAD -->
+    <section id="comunidad" class="py-24 px-6 max-w-7xl mx-auto text-center">
+        <h2 class="headline text-5xl font-bold mb-8">Únete a nuestra comunidad</h2>
+        <p class="text-2xl text-gray-300 max-w-2xl mx-auto">Aquí convertimos ideas en realidad. Conectamos sueños con oportunidades digitales.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-400">
+            <p>© 2026 ENLACE DIGITAL • Liderado por mujeres • Colombia y España</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-6 text-xs">
+                <a href="#" onclick="document.getElementById('cookies-modal').showModal()" class="hover:text-white">Política de Cookies</a>
+                <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-white">Política de Privacidad</a>
+                <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-white">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POLÍTICA DE COOKIES -->
+    <dialog id="cookies-modal" class="backdrop:bg-black/80 rounded-3xl p-0 max-w-3xl w-full mx-4">
+        <div class="bg-[#0f0f1f] rounded-3xl p-8 max-h-[90vh] overflow-y-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">Política de Cookies</h2>
+            <div class="prose prose-invert text-sm leading-relaxed space-y-6">
+                <p><strong>Última actualización:</strong> Marzo 2026</p>
+                <p>ENLACE DIGITAL utiliza cookies y tecnologías similares para mejorar tu experiencia, analizar el tráfico y ofrecerte un mejor servicio.</p>
+                
+                <h3 class="text-[#d4af37] font-semibold">¿Qué son las cookies?</h3>
+                <p>Son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra web.</p>
+                
+                <h3 class="text-[#d4af37] font-semibold">Cookies que utilizamos</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Cookies esenciales (funcionamiento del sitio)</li>
+                    <li>Cookies de análisis (para mejorar el servicio)</li>
+                    <li>Cookies de funcionalidad (recordar preferencias)</li>
+                </ul>
+                
+                <h3 class="text-[#d4af37] font-semibold">Base Legal</h3>
+                <p><strong>Colombia:</strong> Ley 1581 de 2012 y normas de la SIC.<br>
+                   <strong>España y UE:</strong> RGPD (UE 2016/679) y LSSI-CE.</p>
+                
+                <h3 class="text-[#d4af37] font-semibold">Tu consentimiento</h3>
+                <p>Al continuar navegando aceptas el uso de cookies. Puedes gestionarlas desde la configuración de tu navegador.</p>
+            </div>
+            <button onclick="this.closest('dialog').close()" class="mt-10 w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl text-lg font-medium">Cerrar</button>
+        </div>
+    </dialog>
+
+    <!-- MODAL LEGAL -->
+    <dialog id="legal-modal" class="backdrop:bg-black/80 rounded-3xl p-0 max-w-3xl w-full mx-4">
+        <div class="bg-[#0f0f1f] rounded-3xl p-8">
+            <h2 class="text-3xl font-bold mb-8 text-center">Políticas Legales</h2>
+            <div class="space-y-6 text-sm">
+                <p><strong>Colombia:</strong> Cumplimos la Ley 1581 de 2012 de Protección de Datos Personales.</p>
+                <p><strong>España y Unión Europea:</strong> Cumplimos el RGPD (UE 2016/679) y la LOPDGDD.</p>
+                <p>Tus datos se tratan con total confidencialidad y solo se usan para contactarte vía WhatsApp cuando tú lo solicitas.</p>
+            </div>
+            <button onclick="this.closest('dialog').close()" class="mt-8 w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl text-lg font-medium">Cerrar</button>
+        </div>
+    </dialog>
+
+    <script>
+        console.log('%c✅ ENLACE DIGITAL - Página completa y legal lista', 'color:#d4af37; font-size:14px');
+    </script>
+</body>
+</html>
