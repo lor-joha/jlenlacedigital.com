@@ -19,6 +19,25 @@
         }
         .gold { color: #d4af37; }
         .logo-glow { filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6)); }
+
+        /* Cookie banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: #0f0f1f;
+            border-top: 1px solid rgba(212,175,55,0.3);
+            padding: 1.25rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.5);
+        }
+        #cookie-banner.hidden { display: none; }
     </style>
 </head>
 <body class="bg-[#0a0a14] text-white">
@@ -32,6 +51,7 @@
             </div>
             <div class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="#servicios" class="hover:text-[#d4af37] transition">Servicios</a>
+                <a href="#precios" class="hover:text-[#d4af37] transition">Precios</a>
                 <a href="#nosotras" class="hover:text-[#d4af37] transition">Nosotras</a>
                 <a href="#comunidad" class="hover:text-[#d4af37] transition">Comunidad</a>
                 <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-[#d4af37] transition">Legal</a>
@@ -53,20 +73,18 @@
                 Creamos comunidad real para que todos los sueños se materialicen.
             </p>
             
-            <!-- Botones WhatsApp -->
             <div class="flex flex-col md:flex-row gap-6 justify-center">
                 <a href="https://wa.me/573504271008?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20conectar%20mi%20sue%C3%B1o%20al%20mundo%20digital" 
                    target="_blank"
                    class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xl px-10 py-6 rounded-3xl flex items-center gap-4 transition-all hover:scale-105">
                     <span class="material-symbols-outlined text-3xl">chat</span>
-                    WhatsApp Colombia<br><span class="text-base opacity-90">+57 350 4271008</span>
+                    <div>WhatsApp Colombia<br><span class="text-base opacity-90">+57 350 4271008</span></div>
                 </a>
-                
                 <a href="https://wa.me/34643082182?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20conectar%20mi%20sue%C3%B1o%20al%20mundo%20digital" 
                    target="_blank"
                    class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xl px-10 py-6 rounded-3xl flex items-center gap-4 transition-all hover:scale-105">
                     <span class="material-symbols-outlined text-3xl">chat</span>
-                    WhatsApp España<br><span class="text-base opacity-90">+34 643 082 182</span>
+                    <div>WhatsApp España<br><span class="text-base opacity-90">+34 643 082 182</span></div>
                 </a>
             </div>
         </div>
@@ -94,8 +112,111 @@
         </div>
     </section>
 
+    <!-- PRECIOS -->
+    <section id="precios" class="py-24 bg-[#0f0f1f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="headline text-5xl font-bold mb-4">Planes y Precios</h2>
+                <p class="text-gray-400 mb-8">Para emprendedores y pequeños negocios · Mensualidad</p>
+
+                <!-- Toggle España / Colombia -->
+                <div class="inline-flex bg-white/10 rounded-2xl p-1">
+                    <button id="btn-es" onclick="setMercado('es')"
+                        class="px-8 py-3 rounded-xl font-semibold transition-all bg-[#d4af37] text-black">
+                        🇪🇸 España
+                    </button>
+                    <button id="btn-co" onclick="setMercado('co')"
+                        class="px-8 py-3 rounded-xl font-semibold transition-all text-white">
+                        🇨🇴 Colombia
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Plan Semilla -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex flex-col">
+                    <h3 class="headline text-2xl font-bold mb-1">Enlace Semilla</h3>
+                    <p class="text-gray-400 text-sm mb-6">Para emprendedores que dan sus primeros pasos en digital</p>
+                    <div class="mb-6">
+                        <span class="precio-es text-5xl font-bold">297 €</span>
+                        <span class="precio-co text-5xl font-bold hidden">850.000 COP</span>
+                        <span class="text-gray-400 text-lg"> / mes</span>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-1 mb-8">
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Gestión de 1 red social (Instagram o Facebook)</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> 8 publicaciones al mes</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Diseño de contenido incluido</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Informe mensual de resultados</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Atención por WhatsApp</li>
+                        <li class="flex items-center gap-2 text-gray-500"><span>✗</span> Anuncios de pago</li>
+                        <li class="flex items-center gap-2 text-gray-500"><span>✗</span> Estrategia binacional</li>
+                    </ul>
+                    <a href="#" onclick="contactarWhatsApp('Enlace Semilla')" 
+                       class="w-full text-center bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-4 rounded-2xl transition-all hover:scale-105">
+                        Quiero este plan 💬
+                    </a>
+                </div>
+
+                <!-- Plan Crecimiento (destacado) -->
+                <div class="bg-white/5 border-2 border-[#d4af37] p-8 rounded-3xl flex flex-col relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#d4af37] text-black text-xs font-bold px-4 py-1 rounded-full">Más popular</div>
+                    <h3 class="headline text-2xl font-bold mb-1">Enlace Crecimiento</h3>
+                    <p class="text-gray-400 text-sm mb-6">Para negocios listos para crecer con presencia real</p>
+                    <div class="mb-6">
+                        <span class="precio-es text-5xl font-bold gold">547 €</span>
+                        <span class="precio-co text-5xl font-bold gold hidden">1.490.000 COP</span>
+                        <span class="text-gray-400 text-lg"> / mes</span>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-1 mb-8">
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Gestión de 2 redes sociales</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> 16 publicaciones al mes</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Diseño de contenido + stories</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> 1 campaña de anuncios al mes</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Informe mensual + reunión de seguimiento</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Atención prioritaria WhatsApp</li>
+                        <li class="flex items-center gap-2 text-gray-500"><span>✗</span> Estrategia binacional</li>
+                    </ul>
+                    <a href="#" onclick="contactarWhatsApp('Enlace Crecimiento')" 
+                       class="w-full text-center bg-[#d4af37] hover:bg-[#b8942e] text-black font-semibold py-4 rounded-2xl transition-all hover:scale-105">
+                        Quiero este plan 💬
+                    </a>
+                </div>
+
+                <!-- Plan Mundial -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex flex-col">
+                    <h3 class="headline text-2xl font-bold mb-1">Enlace Mundial</h3>
+                    <p class="text-gray-400 text-sm mb-6">Para negocios que quieren cruzar fronteras entre España y Colombia</p>
+                    <div class="mb-6">
+                        <span class="precio-es text-5xl font-bold">897 €</span>
+                        <span class="precio-co text-5xl font-bold hidden">2.490.000 COP</span>
+                        <span class="text-gray-400 text-lg"> / mes</span>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-1 mb-8">
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Gestión de 3 redes sociales</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Contenido adaptado a España y Colombia</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Estrategia de expansión binacional</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Campañas de anuncios en ambos mercados</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Informe quincenal + 2 reuniones/mes</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Atención directa España y Colombia</li>
+                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Consultoría estratégica mensual</li>
+                    </ul>
+                    <a href="#" onclick="contactarWhatsApp('Enlace Mundial')" 
+                       class="w-full text-center bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-4 rounded-2xl transition-all hover:scale-105">
+                        Quiero este plan 💬
+                    </a>
+                </div>
+            </div>
+
+            <!-- Consejo primeros clientes -->
+            <div class="mt-12 bg-white/5 border border-[#d4af37]/30 rounded-3xl p-6 text-center text-sm text-gray-300">
+                <strong class="text-[#d4af37]">Consejo para los primeros clientes:</strong> Ofrece el primer mes con un 30–40% de descuento a cambio de testimonios y permiso para usar sus resultados como casos de éxito. Es la inversión más rentable que podéis hacer ahora mismo.
+            </div>
+        </div>
+    </section>
+
     <!-- NOSOTRAS -->
-    <section id="nosotras" class="py-24 bg-[#0f0f1f]">
+    <section id="nosotras" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
@@ -106,7 +227,7 @@
                 </div>
                 <div class="bg-gradient-to-br from-[#d4af37]/10 to-transparent border border-[#d4af37]/20 p-10 rounded-3xl">
                     <p class="italic text-2xl">
-                        “No solo gestionamos redes. Creamos comunidad, confianza y oportunidades reales para que tus sueños se hagan realidad.”
+                        "No solo gestionamos redes. Creamos comunidad, confianza y oportunidades reales para que tus sueños se hagan realidad."
                     </p>
                     <p class="mt-6 text-sm text-gray-400">— Fundadoras de ENLACE DIGITAL</p>
                 </div>
@@ -117,7 +238,21 @@
     <!-- COMUNIDAD -->
     <section id="comunidad" class="py-24 px-6 max-w-7xl mx-auto text-center">
         <h2 class="headline text-5xl font-bold mb-8">Únete a nuestra comunidad</h2>
-        <p class="text-2xl text-gray-300 max-w-2xl mx-auto">Aquí convertimos ideas en realidad. Conectamos sueños con oportunidades digitales.</p>
+        <p class="text-2xl text-gray-300 max-w-2xl mx-auto mb-12">Aquí convertimos ideas en realidad. Conectamos sueños con oportunidades digitales.</p>
+        <div class="flex flex-col md:flex-row gap-6 justify-center">
+            <a href="https://wa.me/573504271008?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20unirme%20a%20la%20comunidad" 
+               target="_blank"
+               class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-3 transition-all hover:scale-105">
+                <span class="material-symbols-outlined">chat</span>
+                Escríbenos Colombia
+            </a>
+            <a href="https://wa.me/34643082182?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20unirme%20a%20la%20comunidad" 
+               target="_blank"
+               class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-3 transition-all hover:scale-105">
+                <span class="material-symbols-outlined">chat</span>
+                Escríbenos España
+            </a>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -132,30 +267,45 @@
         </div>
     </footer>
 
+    <!-- BANNER COOKIES -->
+    <div id="cookie-banner">
+        <p class="text-sm text-gray-300 max-w-2xl">
+            🍪 Usamos cookies para mejorar tu experiencia. Al continuar navegando aceptas nuestra 
+            <a href="#" onclick="document.getElementById('cookies-modal').showModal()" class="text-[#d4af37] underline">Política de Cookies</a>.
+        </p>
+        <div class="flex gap-3">
+            <button onclick="rechazarCookies()" class="px-5 py-2 rounded-xl border border-white/20 text-sm hover:bg-white/10 transition">Rechazar</button>
+            <button onclick="aceptarCookies()" class="px-5 py-2 rounded-xl bg-[#d4af37] text-black font-semibold text-sm hover:bg-[#b8942e] transition">Aceptar</button>
+        </div>
+    </div>
+
     <!-- MODAL POLÍTICA DE COOKIES -->
     <dialog id="cookies-modal" class="backdrop:bg-black/80 rounded-3xl p-0 max-w-3xl w-full mx-4">
         <div class="bg-[#0f0f1f] rounded-3xl p-8 max-h-[90vh] overflow-y-auto">
             <h2 class="text-3xl font-bold mb-6 text-center">Política de Cookies</h2>
-            <div class="prose prose-invert text-sm leading-relaxed space-y-6">
-                <p><strong>Última actualización:</strong> Marzo 2026</p>
+            <div class="text-sm leading-relaxed space-y-6 text-gray-300">
+                <p><strong class="text-white">Última actualización:</strong> Abril 2026</p>
                 <p>ENLACE DIGITAL utiliza cookies y tecnologías similares para mejorar tu experiencia, analizar el tráfico y ofrecerte un mejor servicio.</p>
                 
-                <h3 class="text-[#d4af37] font-semibold">¿Qué son las cookies?</h3>
-                <p>Son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra web.</p>
+                <h3 class="text-[#d4af37] font-semibold text-lg">¿Qué son las cookies?</h3>
+                <p>Son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra web. No contienen datos personales por sí mismas.</p>
                 
-                <h3 class="text-[#d4af37] font-semibold">Cookies que utilizamos</h3>
+                <h3 class="text-[#d4af37] font-semibold text-lg">Cookies que utilizamos</h3>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li>Cookies esenciales (funcionamiento del sitio)</li>
-                    <li>Cookies de análisis (para mejorar el servicio)</li>
-                    <li>Cookies de funcionalidad (recordar preferencias)</li>
+                    <li><strong class="text-white">Cookies esenciales:</strong> Necesarias para el funcionamiento básico del sitio.</li>
+                    <li><strong class="text-white">Cookies de análisis:</strong> Nos permiten entender cómo navegas para mejorar el servicio.</li>
+                    <li><strong class="text-white">Cookies de funcionalidad:</strong> Recuerdan tus preferencias de idioma o región.</li>
                 </ul>
                 
-                <h3 class="text-[#d4af37] font-semibold">Base Legal</h3>
-                <p><strong>Colombia:</strong> Ley 1581 de 2012 y normas de la SIC.<br>
-                   <strong>España y UE:</strong> RGPD (UE 2016/679) y LSSI-CE.</p>
+                <h3 class="text-[#d4af37] font-semibold text-lg">Base Legal</h3>
+                <p><strong class="text-white">Colombia:</strong> Ley 1581 de 2012 y normas de la Superintendencia de Industria y Comercio (SIC).<br>
+                   <strong class="text-white">España y UE:</strong> Reglamento General de Protección de Datos (RGPD, UE 2016/679) y Ley de Servicios de la Sociedad de la Información (LSSI-CE).</p>
                 
-                <h3 class="text-[#d4af37] font-semibold">Tu consentimiento</h3>
-                <p>Al continuar navegando aceptas el uso de cookies. Puedes gestionarlas desde la configuración de tu navegador.</p>
+                <h3 class="text-[#d4af37] font-semibold text-lg">Tu consentimiento</h3>
+                <p>Al hacer clic en "Aceptar" en el banner de cookies, o al continuar navegando, consientes el uso de cookies no esenciales. Puedes retirar tu consentimiento en cualquier momento desde la configuración de tu navegador.</p>
+
+                <h3 class="text-[#d4af37] font-semibold text-lg">¿Cómo gestionar las cookies?</h3>
+                <p>Puedes configurar o deshabilitar las cookies desde los ajustes de tu navegador (Chrome, Firefox, Safari, Edge). Ten en cuenta que desactivarlas puede afectar la funcionalidad del sitio.</p>
             </div>
             <button onclick="this.closest('dialog').close()" class="mt-10 w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl text-lg font-medium">Cerrar</button>
         </div>
@@ -163,19 +313,74 @@
 
     <!-- MODAL LEGAL -->
     <dialog id="legal-modal" class="backdrop:bg-black/80 rounded-3xl p-0 max-w-3xl w-full mx-4">
-        <div class="bg-[#0f0f1f] rounded-3xl p-8">
+        <div class="bg-[#0f0f1f] rounded-3xl p-8 max-h-[90vh] overflow-y-auto">
             <h2 class="text-3xl font-bold mb-8 text-center">Políticas Legales</h2>
-            <div class="space-y-6 text-sm">
-                <p><strong>Colombia:</strong> Cumplimos la Ley 1581 de 2012 de Protección de Datos Personales.</p>
-                <p><strong>España y Unión Europea:</strong> Cumplimos el RGPD (UE 2016/679) y la LOPDGDD.</p>
-                <p>Tus datos se tratan con total confidencialidad y solo se usan para contactarte vía WhatsApp cuando tú lo solicitas.</p>
+            <div class="space-y-6 text-sm text-gray-300 leading-relaxed">
+                <h3 class="text-[#d4af37] font-semibold text-lg">Política de Privacidad</h3>
+                <p>ENLACE DIGITAL trata los datos personales que nos facilitas únicamente para contactarte a través de WhatsApp cuando tú lo solicitas expresamente. No cedemos tus datos a terceros.</p>
+
+                <h3 class="text-[#d4af37] font-semibold text-lg">Marco Legal Colombia</h3>
+                <p>Cumplimos la <strong class="text-white">Ley 1581 de 2012</strong> de Protección de Datos Personales y el Decreto 1377 de 2013. Tus datos se tratan con total confidencialidad.</p>
+
+                <h3 class="text-[#d4af37] font-semibold text-lg">Marco Legal España y Unión Europea</h3>
+                <p>Cumplimos el <strong class="text-white">Reglamento General de Protección de Datos (RGPD, UE 2016/679)</strong> y la Ley Orgánica de Protección de Datos y Garantía de Derechos Digitales (LOPDGDD).</p>
+
+                <h3 class="text-[#d4af37] font-semibold text-lg">Tus derechos</h3>
+                <p>Tienes derecho a acceder, rectificar, suprimir y oponerte al tratamiento de tus datos. Para ejercerlos, contáctanos por WhatsApp.</p>
+
+                <h3 class="text-[#d4af37] font-semibold text-lg">Aviso Legal</h3>
+                <p>El contenido de este sitio web es propiedad de ENLACE DIGITAL. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
             </div>
             <button onclick="this.closest('dialog').close()" class="mt-8 w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl text-lg font-medium">Cerrar</button>
         </div>
     </dialog>
 
     <script>
-        console.log('%c✅ ENLACE DIGITAL - Página completa y legal lista', 'color:#d4af37; font-size:14px');
+        // Toggle precios España / Colombia
+        function setMercado(mercado) {
+            const esPrecios = document.querySelectorAll('.precio-es');
+            const coPrecios = document.querySelectorAll('.precio-co');
+            const btnEs = document.getElementById('btn-es');
+            const btnCo = document.getElementById('btn-co');
+
+            if (mercado === 'es') {
+                esPrecios.forEach(el => el.classList.remove('hidden'));
+                coPrecios.forEach(el => el.classList.add('hidden'));
+                btnEs.classList.add('bg-[#d4af37]', 'text-black');
+                btnEs.classList.remove('text-white');
+                btnCo.classList.remove('bg-[#d4af37]', 'text-black');
+                btnCo.classList.add('text-white');
+            } else {
+                coPrecios.forEach(el => el.classList.remove('hidden'));
+                esPrecios.forEach(el => el.classList.add('hidden'));
+                btnCo.classList.add('bg-[#d4af37]', 'text-black');
+                btnCo.classList.remove('text-white');
+                btnEs.classList.remove('bg-[#d4af37]', 'text-black');
+                btnEs.classList.add('text-white');
+            }
+        }
+
+        // WhatsApp según plan
+        function contactarWhatsApp(plan) {
+            const msg = encodeURIComponent('Hola ENLACE DIGITAL, me interesa el plan ' + plan + '. ¿Me pueden dar más información?');
+            const url = 'https://wa.me/34643082182?text=' + msg;
+            window.open(url, '_blank');
+        }
+
+        // Cookie banner
+        function aceptarCookies() {
+            localStorage.setItem('cookies', 'aceptadas');
+            document.getElementById('cookie-banner').classList.add('hidden');
+        }
+        function rechazarCookies() {
+            localStorage.setItem('cookies', 'rechazadas');
+            document.getElementById('cookie-banner').classList.add('hidden');
+        }
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('cookies')) {
+                document.getElementById('cookie-banner').classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
