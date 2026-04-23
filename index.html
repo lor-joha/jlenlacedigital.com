@@ -1,386 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ENLACE DIGITAL - Marketing Digital y Redes Sociales. Creamos comunidad y materializamos sueños conectando al mundo digital.">
-    <title>ENLACE DIGITAL | Marketing Digital &amp; Redes Sociales</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500&amp;display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .headline { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .hero-bg {
-            background: linear-gradient(rgba(10,10,20,0.92), rgba(10,10,20,0.95)), 
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') center/cover no-repeat;
-        }
-        .gold { color: #d4af37; }
-        .logo-glow { filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6)); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JL Enlace Digital — Agencia de Marketing Digital y Redes Sociales. Conectamos tu marca con las personas que importan.">
+<title>JL Enlace Digital | Marketing Digital & Redes Sociales</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --negro: #0A0A0A;
+  --negro2: #111111;
+  --negro3: #1A1A1A;
+  --dorado: #C9A84C;
+  --dorado-claro: #E8C97A;
+  --dorado-oscuro: #9A7A30;
+  --dorado-suave: rgba(201,168,76,0.15);
+  --blanco: #F5F0E8;
+  --gris: #888880;
+}
+body { font-family: 'Jost', sans-serif; background: var(--negro); color: var(--blanco); overflow-x: hidden; }
 
-        /* Cookie banner */
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            background: #0f0f1f;
-            border-top: 1px solid rgba(212,175,55,0.3);
-            padding: 1.25rem 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            box-shadow: 0 -4px 30px rgba(0,0,0,0.5);
-        }
-        #cookie-banner.hidden { display: none; }
-    </style>
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 3rem; background: rgba(10,10,10,0.95);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  position: sticky; top:0; z-index:100; backdrop-filter: blur(10px);
+}
+.logo { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.5rem; color: var(--dorado); letter-spacing: 2px; }
+.logo span { color: var(--blanco); font-weight: 400; font-size: 0.85rem; letter-spacing: 4px; display: block; }
+.nav-links a { text-decoration: none; color: var(--gris); font-size: 0.85rem; margin-left: 2rem; letter-spacing: 1px; transition: color 0.3s; text-transform: uppercase; }
+.nav-links a:hover { color: var(--dorado); }
+.nav-cta { border: 1px solid var(--dorado) !important; color: var(--dorado) !important; padding: 0.5rem 1.5rem; transition: all 0.3s !important; }
+.nav-cta:hover { background: var(--dorado) !important; color: var(--negro) !important; }
+
+.hero {
+  min-height: 90vh; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; padding: 6rem 3rem; max-width: 1200px; margin: 0 auto; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid rgba(201,168,76,0.4); color: var(--dorado);
+  font-size: 0.75rem; letter-spacing: 3px; padding: 0.5rem 1.2rem;
+  text-transform: uppercase; margin-bottom: 2rem;
+}
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 700; line-height: 1.05; margin-bottom: 1.5rem; color: var(--blanco); }
+.hero h1 em { color: var(--dorado); font-style: italic; }
+.hero p { color: var(--gris); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+.hero-btns { display: flex; gap: 1rem; }
+.btn-gold { background: var(--dorado); color: var(--negro); border: none; padding: 0.9rem 2.2rem; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; font-weight: 500; }
+.btn-gold:hover { background: var(--dorado-claro); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--dorado); border: 1px solid rgba(201,168,76,0.5); padding: 0.9rem 2.2rem; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; }
+.btn-outline:hover { border-color: var(--dorado); background: var(--dorado-suave); }
+
+.hero-card { background: var(--negro3); border: 1px solid rgba(201,168,76,0.2); padding: 2.5rem; position: relative; }
+.hero-card::before { content: ''; position: absolute; top: -1px; left: 2rem; right: 2rem; height: 2px; background: linear-gradient(90deg, transparent, var(--dorado), transparent); }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+.stat-box { padding: 1.2rem; border: 1px solid rgba(201,168,76,0.15); text-align: center; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--dorado); }
+.stat-label { font-size: 0.7rem; color: var(--gris); letter-spacing: 2px; text-transform: uppercase; margin-top: 0.3rem; }
+.progress-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--gris); margin-bottom: 0.4rem; letter-spacing: 1px; }
+.progress-bar { background: rgba(201,168,76,0.1); height: 2px; margin-bottom: 1.2rem; }
+.progress-fill { background: linear-gradient(90deg, var(--dorado-oscuro), var(--dorado)); height: 2px; transition: width 1.5s ease; }
+
+.divider { text-align: center; padding: 2rem; color: rgba(201,168,76,0.3); font-size: 1.5rem; letter-spacing: 8px; }
+
+.servicios { padding: 6rem 3rem; background: var(--negro2); }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-tag { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--dorado); margin-bottom: 1rem; display: block; }
+.section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; color: var(--blanco); }
+.servicios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; max-width: 1100px; margin: 0 auto; background: rgba(201,168,76,0.1); }
+.servicio-card { background: var(--negro2); padding: 2.5rem 2rem; transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; }
+.servicio-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--dorado); transition: width 0.3s; }
+.servicio-card:hover::after { width: 100%; }
+.servicio-card:hover { background: var(--negro3); }
+.servicio-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(201,168,76,0.15); font-weight: 700; margin-bottom: 0.5rem; }
+.servicio-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--dorado-claro); margin-bottom: 0.8rem; }
+.servicio-card p { font-size: 0.85rem; color: var(--gris); line-height: 1.7; font-weight: 300; }
+
+.testimonios { padding: 6rem 3rem; background: var(--negro); }
+.testimonios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; max-width: 1000px; margin: 4rem auto 0; background: rgba(201,168,76,0.1); }
+.testimonio-card { background: var(--negro); padding: 2.5rem; }
+.comilla { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--dorado); line-height: 1; margin-bottom: 0.5rem; opacity: 0.5; }
+.testimonio-card p { font-size: 0.9rem; color: var(--gris); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; font-style: italic; }
+.testimonio-autor { font-size: 0.85rem; color: var(--dorado); letter-spacing: 1px; font-weight: 500; }
+.testimonio-empresa { font-size: 0.75rem; color: rgba(201,168,76,0.5); letter-spacing: 2px; text-transform: uppercase; margin-top: 0.2rem; }
+
+.cta-section { padding: 8rem 3rem; background: var(--negro2); text-align: center; position: relative; }
+.cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--dorado), transparent); }
+.cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--blanco); margin-bottom: 1rem; }
+.cta-section h2 em { color: var(--dorado); font-style: italic; }
+.cta-section > p { color: var(--gris); font-size: 1rem; margin-bottom: 4rem; font-weight: 300; }
+
+.form-container { background: var(--negro3); border: 1px solid rgba(201,168,76,0.2); padding: 3rem; max-width: 580px; margin: 0 auto; position: relative; }
+.form-container::before { content: ''; position: absolute; top: -1px; left: 3rem; right: 3rem; height: 2px; background: linear-gradient(90deg, transparent, var(--dorado), transparent); }
+.form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--dorado); margin-bottom: 2rem; text-align: left; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group.full { grid-column: 1 / -1; }
+label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+input, select, textarea { background: var(--negro); border: 1px solid rgba(201,168,76,0.2); border-radius: 0; padding: 0.8rem 1rem; font-size: 0.9rem; font-family: 'Jost', sans-serif; color: var(--blanco); transition: border-color 0.3s; outline: none; }
+input:focus, select:focus, textarea:focus { border-color: var(--dorado); }
+input::placeholder, textarea::placeholder { color: rgba(136,136,128,0.5); }
+select option { background: var(--negro); color: var(--blanco); }
+textarea { resize: none; height: 100px; }
+.submit-btn { width: 100%; background: var(--dorado); color: var(--negro); border: none; padding: 1rem; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; font-weight: 500; margin-top: 1rem; }
+.submit-btn:hover { background: var(--dorado-claro); }
+.success-msg { display: none; text-align: center; padding: 3rem 1rem; }
+.success-msg h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--dorado); margin-bottom: 0.5rem; }
+.success-msg p { color: var(--gris); font-size: 0.9rem; }
+
+.whatsapp-btn { position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.3s; text-decoration: none; }
+.whatsapp-btn:hover { transform: scale(1.1); }
+
+footer { background: var(--negro); border-top: 1px solid rgba(201,168,76,0.15); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--dorado); letter-spacing: 2px; }
+footer p { font-size: 0.75rem; color: var(--gris); letter-spacing: 1px; }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem; min-height: auto; }
+  .hero h1 { font-size: 2.5rem; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .servicios, .testimonios, .cta-section { padding: 4rem 1.5rem; }
+  .cta-section h2 { font-size: 2rem; }
+}
+</style>
 </head>
-<body class="bg-[#0a0a14] text-white">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full bg-[#0a0a14]/90 backdrop-blur-md z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="ENLACE DIGITAL" class="h-12 w-auto">
-                <div class="headline text-2xl font-bold tracking-tighter">ENLACE DIGITAL</div>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#servicios" class="hover:text-[#d4af37] transition">Servicios</a>
-                <a href="#precios" class="hover:text-[#d4af37] transition">Precios</a>
-                <a href="#nosotras" class="hover:text-[#d4af37] transition">Nosotras</a>
-                <a href="#comunidad" class="hover:text-[#d4af37] transition">Comunidad</a>
-                <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-[#d4af37] transition">Legal</a>
-            </div>
-        </div>
-    </nav>
+<nav>
+  <div class="logo">JL Enlace Digital<span>Marketing & Social Media</span></div>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="#contacto" class="nav-cta">Contactar</a>
+  </div>
+</nav>
 
-    <!-- HERO -->
-    <header class="hero-bg min-h-screen flex items-center pt-20">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <img src="logo.png" alt="ENLACE DIGITAL Logo" class="mx-auto h-56 md:h-64 mb-10 logo-glow">
-            
-            <h1 class="headline text-6xl md:text-7xl font-bold leading-tight mb-6">
-                Conectamos tus sueños<br>con el <span class="gold">mundo digital</span>
-            </h1>
-            
-            <p class="text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
-                Marketing Digital y Redes Sociales liderado por dos mujeres.<br>
-                Creamos comunidad real para que todos los sueños se materialicen.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="https://wa.me/573504271008?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20conectar%20mi%20sue%C3%B1o%20al%20mundo%20digital" 
-                   target="_blank"
-                   class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xl px-10 py-6 rounded-3xl flex items-center gap-4 transition-all hover:scale-105">
-                    <span class="material-symbols-outlined text-3xl">chat</span>
-                    <div>WhatsApp Colombia<br><span class="text-base opacity-90">+57 350 4271008</span></div>
-                </a>
-                <a href="https://wa.me/34643082182?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20conectar%20mi%20sue%C3%B1o%20al%20mundo%20digital" 
-                   target="_blank"
-                   class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-xl px-10 py-6 rounded-3xl flex items-center gap-4 transition-all hover:scale-105">
-                    <span class="material-symbols-outlined text-3xl">chat</span>
-                    <div>WhatsApp España<br><span class="text-base opacity-90">+34 643 082 182</span></div>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="headline text-5xl font-bold">Nuestros Servicios</h2>
-            <p class="text-gray-400 mt-3">Estrategias digitales que conectan y hacen crecer tu marca</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#d4af37] transition">
-                <h3 class="text-2xl font-semibold mb-4">Gestión de Redes Sociales</h3>
-                <p class="text-gray-400">Contenido estratégico, calendario editorial y manejo profesional de Instagram, TikTok, LinkedIn y Facebook.</p>
-            </div>
-            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#d4af37] transition">
-                <h3 class="text-2xl font-semibold mb-4">Marketing Digital</h3>
-                <p class="text-gray-400">Campañas de anuncios, SEO, email marketing y estrategias que generan resultados reales.</p>
-            </div>
-            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#d4af37] transition">
-                <h3 class="text-2xl font-semibold mb-4">Creación de Comunidad</h3>
-                <p class="text-gray-400">Construimos conexiones auténticas para que tus sueños se materialicen en el mundo digital.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRECIOS -->
-    <section id="precios" class="py-24 bg-[#0f0f1f]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="headline text-5xl font-bold mb-4">Planes y Precios</h2>
-                <p class="text-gray-400 mb-8">Para emprendedores y pequeños negocios · Mensualidad</p>
-
-                <!-- Toggle España / Colombia -->
-                <div class="inline-flex bg-white/10 rounded-2xl p-1">
-                    <button id="btn-es" onclick="setMercado('es')"
-                        class="px-8 py-3 rounded-xl font-semibold transition-all bg-[#d4af37] text-black">
-                        🇪🇸 España
-                    </button>
-                    <button id="btn-co" onclick="setMercado('co')"
-                        class="px-8 py-3 rounded-xl font-semibold transition-all text-white">
-                        🇨🇴 Colombia
-                    </button>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-
-                <!-- Plan Semilla -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex flex-col">
-                    <h3 class="headline text-2xl font-bold mb-1">Enlace Semilla</h3>
-                    <p class="text-gray-400 text-sm mb-6">Para emprendedores que dan sus primeros pasos en digital</p>
-                    <div class="mb-6">
-                        <span class="precio-es text-5xl font-bold">297 €</span>
-                        <span class="precio-co text-5xl font-bold hidden">850.000 COP</span>
-                        <span class="text-gray-400 text-lg"> / mes</span>
-                    </div>
-                    <ul class="space-y-3 text-sm flex-1 mb-8">
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Gestión de 1 red social (Instagram o Facebook)</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> 8 publicaciones al mes</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Diseño de contenido incluido</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Informe mensual de resultados</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Atención por WhatsApp</li>
-                        <li class="flex items-center gap-2 text-gray-500"><span>✗</span> Anuncios de pago</li>
-                        <li class="flex items-center gap-2 text-gray-500"><span>✗</span> Estrategia binacional</li>
-                    </ul>
-                    <a href="#" onclick="contactarWhatsApp('Enlace Semilla')" 
-                       class="w-full text-center bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-4 rounded-2xl transition-all hover:scale-105">
-                        Quiero este plan 💬
-                    </a>
-                </div>
-
-                <!-- Plan Crecimiento (destacado) -->
-                <div class="bg-white/5 border-2 border-[#d4af37] p-8 rounded-3xl flex flex-col relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#d4af37] text-black text-xs font-bold px-4 py-1 rounded-full">Más popular</div>
-                    <h3 class="headline text-2xl font-bold mb-1">Enlace Crecimiento</h3>
-                    <p class="text-gray-400 text-sm mb-6">Para negocios listos para crecer con presencia real</p>
-                    <div class="mb-6">
-                        <span class="precio-es text-5xl font-bold gold">547 €</span>
-                        <span class="precio-co text-5xl font-bold gold hidden">1.490.000 COP</span>
-                        <span class="text-gray-400 text-lg"> / mes</span>
-                    </div>
-                    <ul class="space-y-3 text-sm flex-1 mb-8">
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Gestión de 2 redes sociales</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> 16 publicaciones al mes</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Diseño de contenido + stories</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> 1 campaña de anuncios al mes</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Informe mensual + reunión de seguimiento</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Atención prioritaria WhatsApp</li>
-                        <li class="flex items-center gap-2 text-gray-500"><span>✗</span> Estrategia binacional</li>
-                    </ul>
-                    <a href="#" onclick="contactarWhatsApp('Enlace Crecimiento')" 
-                       class="w-full text-center bg-[#d4af37] hover:bg-[#b8942e] text-black font-semibold py-4 rounded-2xl transition-all hover:scale-105">
-                        Quiero este plan 💬
-                    </a>
-                </div>
-
-                <!-- Plan Mundial -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex flex-col">
-                    <h3 class="headline text-2xl font-bold mb-1">Enlace Mundial</h3>
-                    <p class="text-gray-400 text-sm mb-6">Para negocios que quieren cruzar fronteras entre España y Colombia</p>
-                    <div class="mb-6">
-                        <span class="precio-es text-5xl font-bold">897 €</span>
-                        <span class="precio-co text-5xl font-bold hidden">2.490.000 COP</span>
-                        <span class="text-gray-400 text-lg"> / mes</span>
-                    </div>
-                    <ul class="space-y-3 text-sm flex-1 mb-8">
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Gestión de 3 redes sociales</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Contenido adaptado a España y Colombia</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Estrategia de expansión binacional</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Campañas de anuncios en ambos mercados</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Informe quincenal + 2 reuniones/mes</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Atención directa España y Colombia</li>
-                        <li class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Consultoría estratégica mensual</li>
-                    </ul>
-                    <a href="#" onclick="contactarWhatsApp('Enlace Mundial')" 
-                       class="w-full text-center bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-4 rounded-2xl transition-all hover:scale-105">
-                        Quiero este plan 💬
-                    </a>
-                </div>
-            </div>
-
-            <!-- Consejo primeros clientes -->
-            <div class="mt-12 bg-white/5 border border-[#d4af37]/30 rounded-3xl p-6 text-center text-sm text-gray-300">
-                <strong class="text-[#d4af37]">Consejo para los primeros clientes:</strong> Ofrece el primer mes con un 30–40% de descuento a cambio de testimonios y permiso para usar sus resultados como casos de éxito. Es la inversión más rentable que podéis hacer ahora mismo.
-            </div>
-        </div>
-    </section>
-
-    <!-- NOSOTRAS -->
-    <section id="nosotras" class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="headline text-5xl font-bold mb-6">Dos mujeres creando enlaces que transforman</h2>
-                    <p class="text-xl text-gray-300 leading-relaxed">
-                        Somos un equipo femenino apasionado por el marketing digital. Creemos que cualquier sueño puede materializarse cuando se conecta correctamente con el mundo digital.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-br from-[#d4af37]/10 to-transparent border border-[#d4af37]/20 p-10 rounded-3xl">
-                    <p class="italic text-2xl">
-                        "No solo gestionamos redes. Creamos comunidad, confianza y oportunidades reales para que tus sueños se hagan realidad."
-                    </p>
-                    <p class="mt-6 text-sm text-gray-400">— Fundadoras de ENLACE DIGITAL</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMUNIDAD -->
-    <section id="comunidad" class="py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 class="headline text-5xl font-bold mb-8">Únete a nuestra comunidad</h2>
-        <p class="text-2xl text-gray-300 max-w-2xl mx-auto mb-12">Aquí convertimos ideas en realidad. Conectamos sueños con oportunidades digitales.</p>
-        <div class="flex flex-col md:flex-row gap-6 justify-center">
-            <a href="https://wa.me/573504271008?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20unirme%20a%20la%20comunidad" 
-               target="_blank"
-               class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-3 transition-all hover:scale-105">
-                <span class="material-symbols-outlined">chat</span>
-                Escríbenos Colombia
-            </a>
-            <a href="https://wa.me/34643082182?text=Hola%20ENLACE%20DIGITAL%2C%20quiero%20unirme%20a%20la%20comunidad" 
-               target="_blank"
-               class="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-3 transition-all hover:scale-105">
-                <span class="material-symbols-outlined">chat</span>
-                Escríbenos España
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-black border-t border-white/10 py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-400">
-            <p>© 2026 ENLACE DIGITAL • Liderado por mujeres • Colombia y España</p>
-            <div class="mt-6 flex flex-wrap justify-center gap-6 text-xs">
-                <a href="#" onclick="document.getElementById('cookies-modal').showModal()" class="hover:text-white">Política de Cookies</a>
-                <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-white">Política de Privacidad</a>
-                <a href="#" onclick="document.getElementById('legal-modal').showModal()" class="hover:text-white">Aviso Legal</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- BANNER COOKIES -->
-    <div id="cookie-banner">
-        <p class="text-sm text-gray-300 max-w-2xl">
-            🍪 Usamos cookies para mejorar tu experiencia. Al continuar navegando aceptas nuestra 
-            <a href="#" onclick="document.getElementById('cookies-modal').showModal()" class="text-[#d4af37] underline">Política de Cookies</a>.
-        </p>
-        <div class="flex gap-3">
-            <button onclick="rechazarCookies()" class="px-5 py-2 rounded-xl border border-white/20 text-sm hover:bg-white/10 transition">Rechazar</button>
-            <button onclick="aceptarCookies()" class="px-5 py-2 rounded-xl bg-[#d4af37] text-black font-semibold text-sm hover:bg-[#b8942e] transition">Aceptar</button>
-        </div>
+<section class="hero">
+  <div>
+    <div class="hero-badge">✦ Marketing Digital & Redes Sociales</div>
+    <h1>Tu negocio merece <em>brillar</em> en digital</h1>
+    <p>En JL Enlace Digital conectamos tu marca con las personas que realmente importan. Estrategias reales, resultados medibles y sin rodeos.</p>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Quiero crecer</button>
+      <button class="btn-outline" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Ver servicios</button>
     </div>
+  </div>
+  <div class="hero-card">
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num" id="c1">0</div><div class="stat-label">Clientes activos</div></div>
+      <div class="stat-box"><div class="stat-num" id="c2">0%</div><div class="stat-label">Satisfacción</div></div>
+      <div class="stat-box"><div class="stat-num" id="c3">0</div><div class="stat-label">Campañas</div></div>
+      <div class="stat-box"><div class="stat-num" id="c4">0x</div><div class="stat-label">ROI promedio</div></div>
+    </div>
+    <div class="progress-label"><span>Instagram</span><span>94%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="p1" style="width:0%"></div></div>
+    <div class="progress-label"><span>Facebook Ads</span><span>88%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="p2" style="width:0%"></div></div>
+    <div class="progress-label"><span>Email Marketing</span><span>91%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="p3" style="width:0%"></div></div>
+  </div>
+</section>
 
-    <!-- MODAL POLÍTICA DE COOKIES -->
-    <dialog id="cookies-modal" class="backdrop:bg-black/80 rounded-3xl p-0 max-w-3xl w-full mx-4">
-        <div class="bg-[#0f0f1f] rounded-3xl p-8 max-h-[90vh] overflow-y-auto">
-            <h2 class="text-3xl font-bold mb-6 text-center">Política de Cookies</h2>
-            <div class="text-sm leading-relaxed space-y-6 text-gray-300">
-                <p><strong class="text-white">Última actualización:</strong> Abril 2026</p>
-                <p>ENLACE DIGITAL utiliza cookies y tecnologías similares para mejorar tu experiencia, analizar el tráfico y ofrecerte un mejor servicio.</p>
-                
-                <h3 class="text-[#d4af37] font-semibold text-lg">¿Qué son las cookies?</h3>
-                <p>Son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra web. No contienen datos personales por sí mismas.</p>
-                
-                <h3 class="text-[#d4af37] font-semibold text-lg">Cookies que utilizamos</h3>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong class="text-white">Cookies esenciales:</strong> Necesarias para el funcionamiento básico del sitio.</li>
-                    <li><strong class="text-white">Cookies de análisis:</strong> Nos permiten entender cómo navegas para mejorar el servicio.</li>
-                    <li><strong class="text-white">Cookies de funcionalidad:</strong> Recuerdan tus preferencias de idioma o región.</li>
-                </ul>
-                
-                <h3 class="text-[#d4af37] font-semibold text-lg">Base Legal</h3>
-                <p><strong class="text-white">Colombia:</strong> Ley 1581 de 2012 y normas de la Superintendencia de Industria y Comercio (SIC).<br>
-                   <strong class="text-white">España y UE:</strong> Reglamento General de Protección de Datos (RGPD, UE 2016/679) y Ley de Servicios de la Sociedad de la Información (LSSI-CE).</p>
-                
-                <h3 class="text-[#d4af37] font-semibold text-lg">Tu consentimiento</h3>
-                <p>Al hacer clic en "Aceptar" en el banner de cookies, o al continuar navegando, consientes el uso de cookies no esenciales. Puedes retirar tu consentimiento en cualquier momento desde la configuración de tu navegador.</p>
+<div class="divider">— ✦ —</div>
 
-                <h3 class="text-[#d4af37] font-semibold text-lg">¿Cómo gestionar las cookies?</h3>
-                <p>Puedes configurar o deshabilitar las cookies desde los ajustes de tu navegador (Chrome, Firefox, Safari, Edge). Ten en cuenta que desactivarlas puede afectar la funcionalidad del sitio.</p>
-            </div>
-            <button onclick="this.closest('dialog').close()" class="mt-10 w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl text-lg font-medium">Cerrar</button>
+<section class="servicios" id="servicios">
+  <div class="section-header">
+    <span class="section-tag">Lo que hacemos</span>
+    <h2>Servicios diseñados para crecer</h2>
+  </div>
+  <div class="servicios-grid">
+    <div class="servicio-card">
+      <div class="servicio-num">01</div>
+      <h3>Gestión de Redes Sociales</h3>
+      <p>Creamos contenido que conecta, fideliza y convierte. Tu comunidad, nuestra prioridad.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">02</div>
+      <h3>Publicidad Digital</h3>
+      <p>Campañas en Facebook, Instagram y Google que llegan a tu cliente ideal en el momento justo.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">03</div>
+      <h3>Estrategia de Contenidos</h3>
+      <p>Planificación mensual, calendarios editoriales y análisis de métricas para crecer sin parar.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">04</div>
+      <h3>Email Marketing</h3>
+      <p>Secuencias automatizadas que nutren tus leads y los convierten en clientes fieles.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">05</div>
+      <h3>Diseño Web</h3>
+      <p>Páginas que venden. Rápidas, bonitas y optimizadas para convertir visitas en clientes.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">06</div>
+      <h3>Análisis y Reportes</h3>
+      <p>Informes claros y accionables. Sabrás exactamente qué funciona y por qué.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonios" id="testimonios">
+  <div class="section-header">
+    <span class="section-tag">Testimonios</span>
+    <h2>Lo que dicen nuestros clientes</h2>
+  </div>
+  <div class="testimonios-grid">
+    <div class="testimonio-card">
+      <div class="comilla">"</div>
+      <p>Desde que trabajamos con JL Enlace Digital, nuestras ventas online crecieron un 40%. Son cercanos, profesionales y muy creativos.</p>
+      <div class="testimonio-autor">María González</div>
+      <div class="testimonio-empresa">Boutique La Palma</div>
+    </div>
+    <div class="testimonio-card">
+      <div class="comilla">"</div>
+      <p>Por fin una agencia que habla claro, cumple lo que promete y está siempre disponible. 100% recomendados.</p>
+      <div class="testimonio-autor">Carlos Ruiz</div>
+      <div class="testimonio-empresa">Restaurante El Rincón</div>
+    </div>
+    <div class="testimonio-card">
+      <div class="comilla">"</div>
+      <p>Triplicamos nuestros seguidores en 3 meses y empezamos a recibir consultas todos los días. ¡Increíble!</p>
+      <div class="testimonio-autor">Ana Martínez</div>
+      <div class="testimonio-empresa">Clínica Bienestar</div>
+    </div>
+    <div class="testimonio-card">
+      <div class="comilla">"</div>
+      <p>El equipo es muy profesional y siempre están disponibles para resolver cualquier duda. Excelente servicio.</p>
+      <div class="testimonio-autor">Pedro López</div>
+      <div class="testimonio-empresa">Inmobiliaria Costa</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contacto">
+  <h2>¿Lista para <em>despegar</em>?</h2>
+  <p>Cuéntanos sobre tu negocio y te preparamos una estrategia personalizada — sin compromiso.</p>
+  <div class="form-container">
+    <div id="form-area">
+      <div class="form-title">Hablemos de tu negocio ✦</div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Tu nombre</label>
+            <input type="text" placeholder="Ana García" required>
+          </div>
+          <div class="form-group">
+            <label>Empresa / Negocio</label>
+            <input type="text" placeholder="Mi Negocio">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="ana@minegocio.com" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Teléfono</label>
+            <input type="tel" placeholder="+34 600 000 000">
+          </div>
+          <div class="form-group full">
+            <label>¿Qué necesitas?</label>
+            <select>
+              <option value="">Selecciona un servicio...</option>
+              <option>Gestión de Redes Sociales</option>
+              <option>Publicidad Digital (Ads)</option>
+              <option>Estrategia de Contenidos</option>
+              <option>Email Marketing</option>
+              <option>Diseño Web</option>
+              <option>Todo lo anterior</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Cuéntanos sobre tu negocio</label>
+            <textarea placeholder="¿A qué te dedicas? ¿Cuál es tu mayor reto ahora mismo?"></textarea>
+          </div>
         </div>
-    </dialog>
+        <button type="submit" class="submit-btn">Solicitar estrategia gratuita</button>
+      </form>
+    </div>
+    <div class="success-msg" id="success">
+      <h3>✦ ¡Mensaje recibido!</h3>
+      <p style="margin-top:0.5rem">Te respondemos en menos de 24 horas. ¡Gracias por confiar en JL Enlace Digital!</p>
+    </div>
+  </div>
+</section>
 
-    <!-- MODAL LEGAL -->
-    <dialog id="legal-modal" class="backdrop:bg-black/80 rounded-3xl p-0 max-w-3xl w-full mx-4">
-        <div class="bg-[#0f0f1f] rounded-3xl p-8 max-h-[90vh] overflow-y-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center">Políticas Legales</h2>
-            <div class="space-y-6 text-sm text-gray-300 leading-relaxed">
-                <h3 class="text-[#d4af37] font-semibold text-lg">Política de Privacidad</h3>
-                <p>ENLACE DIGITAL trata los datos personales que nos facilitas únicamente para contactarte a través de WhatsApp cuando tú lo solicitas expresamente. No cedemos tus datos a terceros.</p>
+<a href="https://wa.me/34643082182" class="whatsapp-btn" target="_blank" title="Escríbenos por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 
-                <h3 class="text-[#d4af37] font-semibold text-lg">Marco Legal Colombia</h3>
-                <p>Cumplimos la <strong class="text-white">Ley 1581 de 2012</strong> de Protección de Datos Personales y el Decreto 1377 de 2013. Tus datos se tratan con total confidencialidad.</p>
+<footer>
+  <div class="footer-logo">JL Enlace Digital</div>
+  <p>© 2025 JL Enlace Digital — Todos los derechos reservados</p>
+</footer>
 
-                <h3 class="text-[#d4af37] font-semibold text-lg">Marco Legal España y Unión Europea</h3>
-                <p>Cumplimos el <strong class="text-white">Reglamento General de Protección de Datos (RGPD, UE 2016/679)</strong> y la Ley Orgánica de Protección de Datos y Garantía de Derechos Digitales (LOPDGDD).</p>
-
-                <h3 class="text-[#d4af37] font-semibold text-lg">Tus derechos</h3>
-                <p>Tienes derecho a acceder, rectificar, suprimir y oponerte al tratamiento de tus datos. Para ejercerlos, contáctanos por WhatsApp.</p>
-
-                <h3 class="text-[#d4af37] font-semibold text-lg">Aviso Legal</h3>
-                <p>El contenido de este sitio web es propiedad de ENLACE DIGITAL. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
-            </div>
-            <button onclick="this.closest('dialog').close()" class="mt-8 w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl text-lg font-medium">Cerrar</button>
-        </div>
-    </dialog>
-
-    <script>
-        // Toggle precios España / Colombia
-        function setMercado(mercado) {
-            const esPrecios = document.querySelectorAll('.precio-es');
-            const coPrecios = document.querySelectorAll('.precio-co');
-            const btnEs = document.getElementById('btn-es');
-            const btnCo = document.getElementById('btn-co');
-
-            if (mercado === 'es') {
-                esPrecios.forEach(el => el.classList.remove('hidden'));
-                coPrecios.forEach(el => el.classList.add('hidden'));
-                btnEs.classList.add('bg-[#d4af37]', 'text-black');
-                btnEs.classList.remove('text-white');
-                btnCo.classList.remove('bg-[#d4af37]', 'text-black');
-                btnCo.classList.add('text-white');
-            } else {
-                coPrecios.forEach(el => el.classList.remove('hidden'));
-                esPrecios.forEach(el => el.classList.add('hidden'));
-                btnCo.classList.add('bg-[#d4af37]', 'text-black');
-                btnCo.classList.remove('text-white');
-                btnEs.classList.remove('bg-[#d4af37]', 'text-black');
-                btnEs.classList.add('text-white');
-            }
-        }
-
-        // WhatsApp según plan
-        function contactarWhatsApp(plan) {
-            const msg = encodeURIComponent('Hola ENLACE DIGITAL, me interesa el plan ' + plan + '. ¿Me pueden dar más información?');
-            const url = 'https://wa.me/34643082182?text=' + msg;
-            window.open(url, '_blank');
-        }
-
-        // Cookie banner
-        function aceptarCookies() {
-            localStorage.setItem('cookies', 'aceptadas');
-            document.getElementById('cookie-banner').classList.add('hidden');
-        }
-        function rechazarCookies() {
-            localStorage.setItem('cookies', 'rechazadas');
-            document.getElementById('cookie-banner').classList.add('hidden');
-        }
-        window.addEventListener('load', function() {
-            if (localStorage.getItem('cookies')) {
-                document.getElementById('cookie-banner').classList.add('hidden');
-            }
-        });
-    </script>
+<script>
+function animateCounter(el, target, suffix, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = Math.floor(start) + suffix;
+  }, 16);
+}
+window.addEventListener('load', () => {
+  animateCounter(document.getElementById('c1'), 48, '+', 1500);
+  animateCounter(document.getElementById('c2'), 98, '%', 1500);
+  animateCounter(document.getElementById('c3'), 120, '', 1500);
+  animateCounter(document.getElementById('c4'), 3, 'x', 1500);
+  setTimeout(() => { document.getElementById('p1').style.width = '94%'; }, 400);
+  setTimeout(() => { document.getElementById('p2').style.width = '88%'; }, 600);
+  setTimeout(() => { document.getElementById('p3').style.width = '91%'; }, 800);
+});
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-area').style.display = 'none';
+  document.getElementById('success').style.display = 'block';
+}
+</script>
 </body>
 </html>
